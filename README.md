@@ -1,13 +1,4 @@
-# webpack-issue-6703
-Repository to replicate issue #6703
+# How to get one bundle.css
+Instead of 1.css, 2.css --> bundle.css
 
-```
-git clone https://github.com/l0gicgate/webpack-issue-6703.git
-
-
-cd webpack-issue-6703/ && npm install
-
-
-// Run either build:dist or build:dev
-npm run build:dist
-```
+![alt text](https://i.imgur.com/j5Jq8T0.png)
