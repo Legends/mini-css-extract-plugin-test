@@ -1,6 +1,7 @@
 const Webpack = require('webpack');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const path = require('path');
 
 module.exports = function (env) {
@@ -69,18 +70,11 @@ module.exports = function (env) {
       minimize: isDist,
       runtimeChunk: false,
       splitChunks: {
-        // automaticNameDelimiter: "-",
+        automaticNameDelimiter: "-",
         cacheGroups: {
-          // default: {
-          //   chunks: 'initial',
-          //   name: 'bundle',
-          //   priority: -20,
-          //   reuseExistingChunk: true,
-          // }
-          // ,
           styles: {
             name: 'bundle',
-            test: /\.css$/,
+            test: /\.(css|scss)$/,
             chunks: 'all',
             enforce: true
           },
@@ -88,8 +82,7 @@ module.exports = function (env) {
             chunks: 'initial',
             name: 'vendor',
             priority: -10,
-            test: /node_modules/
-            // test: /node_modules\/(.*)\.js/
+            test: /node_modules/        
           }
         }
       }
@@ -100,6 +93,7 @@ module.exports = function (env) {
       publicPath: '/'
     },
     plugins: [
+      new CleanWebpackPlugin("./dist/"),
       new Webpack.optimize.OccurrenceOrderPlugin(),
       new Webpack.optimize.ModuleConcatenationPlugin(),
       new Webpack.HashedModuleIdsPlugin(),
