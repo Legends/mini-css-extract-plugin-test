@@ -10,6 +10,7 @@ var $p = $("<p>hi</p>");
 $body.append($p);
 
  try {
+     debugger;
     let a = new myapp(11,"Johan");
     a.say();
     var p =  a.test();

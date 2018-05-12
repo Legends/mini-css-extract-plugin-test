@@ -11348,6 +11348,7 @@ var $p = jquery__WEBPACK_IMPORTED_MODULE_0__("<p>hi</p>");
 $body.append($p);
 
  try {
+     debugger;
     let a = new _myapp__WEBPACK_IMPORTED_MODULE_1__(11,"Johan");
     a.say();
     var p =  a.test();
