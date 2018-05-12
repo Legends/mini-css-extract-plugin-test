@@ -1,4 +1,4 @@
-(function test() {
+module.exports = (function test() {
 
     var modernBrowser = (
         'fetch' in window &&
@@ -12,7 +12,6 @@
         scriptElement.src = '../node_modules/promise-polyfill/dist/polyfills.js';
         document.head.appendChild(scriptElement);
     }
-
+ return {};
 })()
 
-module.exports = {}

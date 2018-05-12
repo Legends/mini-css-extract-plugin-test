@@ -11388,7 +11388,7 @@ module.exports =  myapp;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function test() {
+module.exports = (function test() {
 
     var modernBrowser = (
         'fetch' in window &&
@@ -11402,10 +11402,10 @@ module.exports =  myapp;
         scriptElement.src = '../node_modules/promise-polyfill/dist/polyfills.js';
         document.head.appendChild(scriptElement);
     }
-
+ return {};
 })()
 
-module.exports = {}
+
 
 /***/ }),
 
