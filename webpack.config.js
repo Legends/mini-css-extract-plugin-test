@@ -12,7 +12,7 @@ module.exports = {
   context: path.resolve(__dirname, "./src"),
   devtool: false,
   entry: {
-    main: ["promise-polyfill", path.resolve(__dirname, "./src/entry.js")],   
+    main: ["./polyfills.js", path.resolve(__dirname, "./src/entry.js")],   
   },
   optimization: {
     minimize: false,
@@ -39,8 +39,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
     new CleanWebpackPlugin("./dist/"),
-    new Webpack.optimize.OccurrenceOrderPlugin(),
-    new Webpack.optimize.ModuleConcatenationPlugin(),
+    // new Webpack.optimize.OccurrenceOrderPlugin(),
+    // new Webpack.optimize.ModuleConcatenationPlugin(),
     // new Webpack.HashedModuleIdsPlugin(),
     //new ExtractTextPlugin("[name].css")
     new MiniCssExtractPlugin({
