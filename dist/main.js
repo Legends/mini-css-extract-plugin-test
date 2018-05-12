@@ -11347,11 +11347,15 @@ var $p = jquery__WEBPACK_IMPORTED_MODULE_0__("<p>hi</p>");
 
 $body.append($p);
 
- 
-let a = new _myapp__WEBPACK_IMPORTED_MODULE_1__(11,"Johan");
-a.say();
-var p =  a.test();
-p.then(()=>{$p.text("success");}).catch(()=>{$p.text("fail");});
+ try {
+    let a = new _myapp__WEBPACK_IMPORTED_MODULE_1__(11,"Johan");
+    a.say();
+    var p =  a.test();
+    p.then(()=>{$p.text("success");}).catch(()=>{$p.text("fail");});
+ } catch (e) {
+     console.error(e);
+ }
+
 
 /***/ }),
 
