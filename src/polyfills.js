@@ -5,11 +5,11 @@ module.exports = (function test() {
         'assign' in Object
     );
 
-    if (!modernBrowser) {
+    if (true) { // !modernBrowser
         console.log("Adding promise polyfill to browser !");
         var scriptElement = document.createElement('script');
         scriptElement.async = false;
-        scriptElement.src = '../node_modules/promise-polyfill/dist/polyfills.js';
+        scriptElement.src = '../node_modules/promise-polyfill/dist/polyfill.js';
         document.head.appendChild(scriptElement);
     }
  return {};
