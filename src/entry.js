@@ -1,43 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Redirect, Route, Router, Switch } from 'react-router';
-import { createBrowserHistory } from 'history';
-import AsyncComponent from '~/components/AsyncComponent';
-import '~/styles/bootstrap.scss';
+import * as $ from "jquery"
+import * as myapp from "./myapp"
+import { debug } from "util";
+// var $ = require("jquery");
 
-const AsyncA = AsyncComponent(() => import('./containers/RouteA').then(module => module.default));
-const AsyncB = AsyncComponent(() => import('./containers/RouteB').then(module => module.default));
+ 
+var $body = $("body");
+var $p = $("<p>hi</p>");
 
-const history = createBrowserHistory();
-const routes = (
-  <Switch>
-    <Route
-      render={(results) => {
-        switch (results.location.search) {
-          default:
-            return (
-              <div>
-                <a href="?a" style={{display: 'block'}}>Go to async route A</a>
-                <a href="?b" style={{display: 'block'}}>Go to async route b</a>
-              </div>
-            );
+$body.append($p);
 
-          case '?a':
-            return <AsyncA />;
-
-          case '?b':
-            return <AsyncB />;
-        }
-      }}
-      path="/"
-    />
-  </Switch>
-);
-
-ReactDOM.render(
-  <Router
-    children={routes}
-    history={history}
-  />,
-  document.getElementById('app'),
-);
+ 
+let a = new myapp(11,"Johan");
+a.say();
+var p =  a.test();
+p.then(()=>{$p.text("success");}).catch(()=>{$p.text("fail");});

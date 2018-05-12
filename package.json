@@ -8,12 +8,16 @@
   "license": "MIT",
   "dependencies": {
     "history": "^4.6.1",
+    "jquery": "^3.3.1",
+    "promise-polyfill": "^7.1.2",
     "react": "^16.2.0",
     "react-calendar": "^2.13.4",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0"
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.1",
+    "@types/mini-css-extract-plugin": "^0.2.0",
     "@types/webpack": "^4.1.3",
     "babel-core": "^6.24.1",
     "babel-eslint": "^8.2.2",
@@ -31,6 +35,7 @@
     "compass-mixins": "^0.12.10",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.3.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
@@ -39,7 +44,8 @@
     "webpack-cli": "^2.0.13"
   },
   "scripts": {
-    "build:dist": "webpack --env.node_env=production",
-    "build:dev": "webpack --env.node_env=development"
+    "prod": "webpack --mode production --env.node_env=production",
+    "dev": "webpack --mode development --env.node_env=development",
+    "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js --env.node_env=production"
   }
 }
