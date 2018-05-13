@@ -1,8 +1,6 @@
-"use strict";
-
 import * as $ from "jquery"
 import * as myapp from "./myapp"
-import { debug } from "util";
+ 
 // var $ = require("jquery");
 
  
