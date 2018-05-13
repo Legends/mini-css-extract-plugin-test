@@ -94,6 +94,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".js", ".txt", ".json", ".css", ".less", ".scss", ".saas"],
+    alias:{
+      "jquery": require.resolve("jquery")
+    }
   },
   output: {
     filename: "[name].js",
