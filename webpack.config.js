@@ -12,7 +12,7 @@ module.exports = {
   context: path.resolve(__dirname, "./src"),
   devtool: false,
   entry: {
-    main: ["./polyfills.js", path.resolve(__dirname, "./src/entry.js")],   
+    main: ["./polyfills.js", path.resolve(__dirname, "./src/entry.js")],
   },
   optimization: {
     minimize: false,
@@ -52,12 +52,12 @@ module.exports = {
     })
   ],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
-        use: [{
-          loader: "babel-loader"        
-        }]
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader?presets[]=es2015'
+        }
       },
       // {
       //   test: /\.(css|scss)$/,
@@ -92,7 +92,7 @@ module.exports = {
       // }
     ]
   },
-  resolve:{
+  resolve: {
     extensions: [".ts", ".js", ".txt", ".json", ".css", ".less", ".scss", ".saas"],
   },
   output: {
