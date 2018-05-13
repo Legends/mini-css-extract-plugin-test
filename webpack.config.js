@@ -53,26 +53,12 @@ module.exports = {
   ],
   module: {
     rules: [
-      // {
-      //   test: /\.jsx?$/,
-      //   use: [{
-      //     loader: "babel-loader",
-      //     options: {
-      //       presets: ["react", "env", "stage-0"],
-      //       plugins: [
-      //         [
-      //           "babel-root-import",
-      //           {
-      //             "rootPathSuffix": "src/"
-      //           }
-      //         ],
-      //         "react-html-attrs",
-      //         "transform-class-properties",
-      //         "transform-decorators-legacy"
-      //       ]
-      //     }
-      //   }]
-      // },
+      {
+        test: /\.js$/,
+        use: [{
+          loader: "babel-loader"        
+        }]
+      },
       // {
       //   test: /\.(css|scss)$/,
       //   use: [{
