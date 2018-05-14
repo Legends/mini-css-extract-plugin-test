@@ -3,7 +3,7 @@ import * as myapp from "./myapp"
  
  var $ = require("jquery");
 
- 
+ // legends
 var $body = $("body");
 var $p = $("<p>hi</p>");
 

@@ -10056,9 +10056,10 @@ var myapp = _interopRequireWildcard(_myapp);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var $ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js"); //  import * as $ from "jquery"
+var $ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
 
-
+// legends
+//  import * as $ from "jquery"
 var $body = $("body");
 var $p = $("<p>hi</p>");
 
