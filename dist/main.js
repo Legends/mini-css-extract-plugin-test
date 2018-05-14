@@ -71,10 +71,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../node_modules/jquery/dist/jquery.js":
-/*!*********************************************!*\
-  !*** ../node_modules/jquery/dist/jquery.js ***!
-  \*********************************************/
+/***/ "./node_modules/jquery/dist/jquery.js":
+/*!********************************************!*\
+  !*** ./node_modules/jquery/dist/jquery.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10001,14 +10001,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	return jQuery;
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/module.js */ "../node_modules/webpack/buildin/module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
-/***/ "../node_modules/webpack/buildin/module.js":
-/*!*************************************************!*\
-  !*** ../node_modules/webpack/buildin/module.js ***!
-  \*************************************************/
+/***/ "./node_modules/webpack/buildin/module.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10040,23 +10040,50 @@ module.exports = function (module) {
 
 /***/ }),
 
-/***/ "./entry.js":
-/*!******************!*\
-  !*** ./entry.js ***!
-  \******************/
+/***/ "./src/All-polyfills.js":
+/*!******************************!*\
+  !*** ./src/All-polyfills.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _myapp = __webpack_require__(/*! ./myapp */ "./myapp.js");
+module.exports = function test() {
+
+    var modernBrowser = 'fetch' in window && 'assign' in Object;
+
+    if (true) {
+        // !modernBrowser
+        console.log("Adding promise polyfill to browser !");
+        var scriptElement = document.createElement('script');
+        scriptElement.async = false;
+        scriptElement.src = './polyfill.js';
+        document.head.appendChild(scriptElement);
+    }
+    return {};
+}();
+
+/***/ }),
+
+/***/ "./src/entry.js":
+/*!**********************!*\
+  !*** ./src/entry.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _myapp = __webpack_require__(/*! ./myapp */ "./src/myapp.js");
 
 var myapp = _interopRequireWildcard(_myapp);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var $ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 // legends
 //  import * as $ from "jquery"
@@ -10077,10 +10104,10 @@ $body.append($p);
 
 /***/ }),
 
-/***/ "./myapp.js":
-/*!******************!*\
-  !*** ./myapp.js ***!
-  \******************/
+/***/ "./src/myapp.js":
+/*!**********************!*\
+  !*** ./src/myapp.js ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10106,42 +10133,15 @@ module.exports = myapp;
 
 /***/ }),
 
-/***/ "./polyfills.js":
-/*!**********************!*\
-  !*** ./polyfills.js ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function test() {
-
-    var modernBrowser = 'fetch' in window && 'assign' in Object;
-
-    if (true) {
-        // !modernBrowser
-        console.log("Adding promise polyfill to browser !");
-        var scriptElement = document.createElement('script');
-        scriptElement.async = false;
-        scriptElement.src = '../node_modules/promise-polyfill/dist/polyfill.js';
-        document.head.appendChild(scriptElement);
-    }
-    return {};
-}();
-
-/***/ }),
-
 /***/ 0:
-/*!***************************************!*\
-  !*** multi ./polyfills.js ./entry.js ***!
-  \***************************************/
+/*!***************************************************!*\
+  !*** multi ./src/All-polyfills.js ./src/entry.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./polyfills.js */"./polyfills.js");
-module.exports = __webpack_require__(/*! C:\Users\Admin\Downloads\mini-css-extract-plugin-test\src\entry.js */"./entry.js");
+__webpack_require__(/*! ./src/All-polyfills.js */"./src/All-polyfills.js");
+module.exports = __webpack_require__(/*! C:\Users\Admin\Downloads\mini-css-extract-plugin-test\src\entry.js */"./src/entry.js");
 
 
 /***/ })

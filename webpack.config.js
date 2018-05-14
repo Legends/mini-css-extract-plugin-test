@@ -3,16 +3,17 @@ const Webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require("path");
 debugger;
 // I want to output one vendors.js and one bundle.js and once bundle.css file.
 
 module.exports = {
 
-  context: path.resolve(__dirname, "./src"),
+  // context: path.resolve(__dirname, "./src"),
   devtool: false,
   entry: {
-    main: ["./polyfills.js", path.resolve(__dirname, "./src/entry.js")],
+    main: ["./src/All-polyfills.js", path.resolve(__dirname, "./src/entry.js")],
   },
   optimization: {
     minimize: false,
@@ -37,6 +38,7 @@ module.exports = {
     // }
   },
   plugins: [
+    new CopyWebpackPlugin(['./node_modules/promise-polyfill/dist/polyfill.js']),
     new HtmlWebpackPlugin(),
     new CleanWebpackPlugin("./dist/"),
     // new Webpack.optimize.OccurrenceOrderPlugin(),

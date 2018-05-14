@@ -34,6 +34,7 @@
     "babel-root-import": "^4.1.8",
     "clean-webpack-plugin": "^0.1.19",
     "compass-mixins": "^0.12.10",
+    "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
