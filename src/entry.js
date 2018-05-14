@@ -1,7 +1,7 @@
- import * as $ from "jquery"
+//  import * as $ from "jquery"
 import * as myapp from "./myapp"
  
- //var $ = require("jquery");
+ var $ = require("jquery");
 
  
 var $body = $("body");

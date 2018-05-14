@@ -10050,17 +10050,13 @@ module.exports = function (module) {
 "use strict";
 
 
-var _jquery = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
-
-var $ = _interopRequireWildcard(_jquery);
-
 var _myapp = __webpack_require__(/*! ./myapp */ "./myapp.js");
 
 var myapp = _interopRequireWildcard(_myapp);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-//var $ = require("jquery");
+var $ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js"); //  import * as $ from "jquery"
 
 
 var $body = $("body");
