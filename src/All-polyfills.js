@@ -5,7 +5,7 @@ module.exports = (function test() {
         'assign' in Object
     );
 
-    if (true) { // !modernBrowser
+    if (!modernBrowser) { // 
         console.log("Adding promise polyfill to browser !");
         var scriptElement = document.createElement('script');
         scriptElement.async = false;
