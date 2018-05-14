@@ -1,5 +1,6 @@
 //  import * as $ from "jquery"
-import * as myapp from "./myapp"
+// import * as myapp from "./myapp"
+let myapp = require("./myapp");
  
  var $ = require("jquery");
 
